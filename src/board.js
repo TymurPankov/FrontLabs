@@ -113,7 +113,7 @@ function pvpClickHandler(index) {
     data.board[index] = value
     forceBoardUpdate()
     const winner = calculateWinner()
-    if (winner=='player') {
+    if (winner) {
       forceEnd(winner)
     }
     else if (isTie()) {
