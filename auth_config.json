@@ -1,0 +1,6 @@
+{
+  "domain": "dev-7f6o-v3n.us.auth0.com",
+    "client_id": "5Z6CnyNuNjPmxkYalScksKG7BfSt8nZQ",
+    "redirect_uri": "http://localhost:8080/callback",
+    "audience": "login.com"
+}

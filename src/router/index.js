@@ -1,39 +1,35 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import { authGuard } from '../auth/authGuard';
-import Home from '../views/Home.vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import Home from '@/views/Home'
+import About from '@/views/About'
 import Profile from "../views/Profile.vue";
-import About from "../views/About.vue"
 import Game from "../views/Tic-Tac-Toe.vue"
 
-Vue.use(VueRouter)
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/game',
+    name: 'Game',
+    component: Game
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: About
+  },
+  {
+    path: "/profile",
+    name: "profile",
+    component: Profile
+  }
+]
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/game',
-      name: 'Game',
-      component: Game
-    },
-    {
-      path: '/about',
-      name: 'About',
-      component: About
-    },
-    {
-      path: "/profile",
-      name: "profile",
-      component: Profile,
-      beforeEnter: authGuard
-    }
-  ]
-});
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes
+})
 
 export default router

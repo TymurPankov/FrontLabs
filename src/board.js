@@ -1,9 +1,9 @@
 import EventEmitter from "events"
-import Vue from 'vue';
-import { BootstrapVue} from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
+//import Vue from 'vue';
+//import { BootstrapVue} from 'bootstrap-vue'
+//import 'bootstrap/dist/css/bootstrap.css'
 
-Vue.use(BootstrapVue)
+//Vue.use(BootstrapVue)
 
 export const emitter = new EventEmitter()
 

@@ -1,29 +1,30 @@
 <template>
   <div>
     <div>
-      <img :src="$auth.user.picture">
+      <img :src="$auth.user.value.picture">
     </div>
     <h1></h1>
     <h2>Info:</h2>
-    <table class="table justify-content-center">
+    <table align="center">
       <tbody>
         <tr>
           <td>Username:</td>
-          <td>{{ $auth.user.nickname }}</td>
+          <td>{{ $auth.user.value.nickname }}</td>
         </tr>
         <tr>
           <td>Email:</td>
-          <td>{{ $auth.user.email }}</td>
+          <td>{{ $auth.user.value.email }}</td>
         </tr>
         <tr>
           <td>Verified:</td>
-          <td v-if="$auth.user.email_verified"> Yes</td>
+          <td v-if="$auth.user.value.email_verified"> Yes</td>
           <td v-else>No</td>
         </tr>
         <tr>
           <td>Last enter: </td>
-          <td>{{ $auth.user.updated_at }}</td>
+          <td>{{ $auth.user.value.updated_at }}</td>
         </tr>
+        <!--<pre>{{ JSON.stringify($auth.user.value, null, 2) }}</pre>-->
       </tbody>
     </table>
   </div>

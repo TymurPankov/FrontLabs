@@ -1,13 +1,9 @@
 <template>
   <div class="home">
-    <!-- Check that the SDK client is not currently loading before accessing is methods -->
-    <div v-if="!$auth.loading">
-    <HelloWorld msg="Welcome to Tic-Tac-Toe game" />
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <p v-if="!$auth.isAuthenticated">You must log in before use app</p>
-    <p v-if="!$auth.isAuthenticated">Now you can play Tic-Tac_toe game.</p>
-    <p>Have a nice time!</p>
-    </div>
+    <img alt="Vue logo" src="../assets/logo.png">
+    <HelloWorld msg="Welcome to Tic-Tac-Toe App"/>
+    <h3 v-if="!$auth.isAuthenticated.value">You need log in to play a game!</h3>
+    <h3 v-if="$auth.isAuthenticated.value">You can play a game, just choose Tic-Tac-Toe page!</h3>
   </div>
 </template>
 
@@ -15,20 +11,9 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: "home",
+  name: 'Home',
   components: {
     HelloWorld
-  },
-  methods: {
-    login() {
-      this.$auth.loginWithRedirect();
-    },
-    logout() {
-      this.$auth.logout({
-        returnTo: window.location.origin
-      });
-    }
   }
-};
-
+}
 </script>
